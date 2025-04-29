@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui veut gagner des millions ? - Simon Edition</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="star-container"></div>
+    <div id="menu">
+        <div class="content-container">
+            <img src="image/Logo-Qui-veut-gagner-des-millions.png" alt="Logo du jeu" width="200">
+            <h1>Qui veut gagner des millions ?<br>Simon Edition</h1>
+            <br>
+            <button id="start-button">Nouvelle Partie</button>
+            <button id="options-button">Options</button>
+        </div>
+    </div>
+
+    <div id="game" class="hidden">
+        <button id="quit-button">Quitter</button>
+        <div class="content-container">
+            <div class="palier-container">
+                <h2>Palier: <span id="palier">1</span></h2>
+                <p id="question-info"></p> <!-- Affichage du numéro de la question et du montant -->    
+            </div>     
+            <div id="question-container" class="question-container">
+                <div id="dog-avatar-container">
+                    <img id="dog-avatar" src="image/Skip.png" alt="Dog Avatar" />
+                </div>
+                <div id="question"></div>
+            </div>
+            <div class="answers-container">
+                <div class="answers" id="answers">
+                    <button class="hexagonal" id="answer-1">Paris</button>
+                    <button class="hexagonal" id="answer-2">London</button>
+                    <button class="hexagonal" id="answer-3">Berlin</button>
+                    <button class="hexagonal" id="answer-4">Madrid</button>
+                </div>
+            </div>    
+            <div class="jokers">
+                <!-- Utilisation d'images à la place des boutons -->
+                <div class="joker" id="joker-50" onclick="useFiftyFifty()">
+                    <img src="image/50.png" alt="Joker 50/50" />
+                </div>
+                <div class="joker" id="joker-vote" onclick="usePublicVote()">
+                    <img src="image/vote.png" alt="Joker Vote du public" />
+                </div>
+                <div class="joker" id="joker-passer" onclick="usePasse()">
+                    <img src="image/next.png" alt="Joker Passer" />
+                </div>
+            </div>       
+
+        </div>
+    </div>
+
+    <div id="vote-popup" class="popup hidden">
+        <h3>Vote du public</h3>
+        <div id="vote-results"></div>
+        <button onclick="closeVotePopup()">Fermer</button>
+    </div>
+
+    <div id="endgame" class="hidden">
+        <p id="end-message"></p>
+        <button id="restart-button">Rejouer</button>
+    </div>
+
+    <audio id="bg-music" loop autoplay>
+        <source src="sound/Intro.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+
+    <audio id="game-jingle">
+        <source src="sound/Beginning.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+
+    <script src="script.js"></script> <!-- Inclure le script principal du jeu -->
+    <script src="questions.js"></script> <!-- Inclure le fichier des questions -->
+
+</body>
+</html>
