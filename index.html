@@ -6,11 +6,32 @@
     <title>Qui veut gagner des millions ? - Simon Edition</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-    <div id="star-container"></div>
+    <div id="options-menu" class="hidden">
+        <h2>Options Audio</h2>
+        <div class="audio-settings">
+            <label for="game-volume">Volume du Jeu :</label>
+            <input type="range" id="game-volume" min="0" max="1" step="0.05" value="0.2">
+            <span id="game-volume-value">20%</span>
+        </div>
+        <div class="audio-settings">
+            <label for="sfx-volume">Volume des Effets Sonores :</label>
+            <input type="range" id="sfx-volume" min="0" max="1" step="0.05" value="1">
+            <span id="sfx-volume-value">100%</span>
+        </div>
+        <button id="back-to-menu">Retour au Menu</button>
+    </div>
+
+
     <div id="menu">
+        <div id="star-container-menu"></div>
         <div class="content-container">
             <img src="image/Logo-Qui-veut-gagner-des-millions.png" alt="Logo du jeu" width="200">
             <h1>Qui veut gagner des millions ?<br>Simon Edition</h1>
@@ -20,17 +41,40 @@
         </div>
     </div>
 
+    <div id="palier-page" class="hidden">
+        <h2>Les Paliers</h2>
+        <img id="palier-image" src="image/palier.jpg" alt="Liste des paliers">
+        <img id="palier-image-clic" src="image/continue.png" alt="Cliquez pour continuer">
+    </div>
+
     <div id="game" class="hidden">
-        <button id="quit-button">Quitter</button>
+        <div id="star-container-game"></div>
         <div class="content-container">
-            <div class="palier-container">
-                <h2>Palier: <span id="palier">1</span></h2>
-                <p id="question-info"></p> <!-- Affichage du numéro de la question et du montant -->    
-            </div>     
-            <div id="question-container" class="question-container">
-                <div id="dog-avatar-container">
-                    <img id="dog-avatar" src="image/Skip.png" alt="Dog Avatar" />
+            <div id="game-header">
+                <div class="palier-container">
+                    <h2>Palier: <span id="palier">1</span></h2>
+                    <p id="question-info"></p> </div>
+            </div>
+
+            <div id="avatar-zone">
+                <div class="avatar-container">
+                    <img src="image/Skip.png" alt="Avatar">
                 </div>
+                <div class="jokers-top">
+                    <button class="joker-button" id="joker-50" onclick="useFiftyFifty()">
+                        <img src="image/50.png" alt="Joker 50/50" />
+                    </button>
+                    <button class="joker-button" id="joker-vote" onclick="usePublicVote()">
+                        <img src="image/vote.png" alt="Joker Vote du public" />
+                    </button>
+                    <button class="joker-button" id="joker-passer" onclick="usePasse()">
+                        <img src="image/next.png" alt="Joker Passer" />
+                    </button>
+                    <button class="quit-button-top" id="quit-button-top">Quitter</button>
+                </div>
+            </div>
+
+            <div id="question-container" class="question-container">
                 <div id="question"></div>
             </div>
             <div class="answers-container">
@@ -40,21 +84,24 @@
                     <button class="hexagonal" id="answer-3">Berlin</button>
                     <button class="hexagonal" id="answer-4">Madrid</button>
                 </div>
-            </div>    
-            <div class="jokers">
-                <!-- Utilisation d'images à la place des boutons -->
-                <div class="joker" id="joker-50" onclick="useFiftyFifty()">
-                    <img src="image/50.png" alt="Joker 50/50" />
-                </div>
-                <div class="joker" id="joker-vote" onclick="usePublicVote()">
-                    <img src="image/vote.png" alt="Joker Vote du public" />
-                </div>
-                <div class="joker" id="joker-passer" onclick="usePasse()">
-                    <img src="image/next.png" alt="Joker Passer" />
-                </div>
-            </div>       
+            </div>
 
         </div>
+        <div class="jokers" style="display: none !important;">
+            <div class="avatar-container">
+                <img src="image/Skip.png" alt="Avatar">
+            </div>
+            <div class="joker" id="joker-50" onclick="useFiftyFifty()">
+                <img src="image/50.png" alt="Joker 50/50" />
+            </div>
+            <div class="joker" id="joker-vote" onclick="usePublicVote()">
+                <img src="image/vote.png" alt="Joker Vote du public" />
+            </div>
+            <div class="joker" id="joker-passer" onclick="usePasse()">
+                <img src="image/next.png" alt="Joker Passer" />
+            </div>
+        </div>
+
     </div>
 
     <div id="vote-popup" class="popup hidden">
@@ -66,20 +113,14 @@
     <div id="endgame" class="hidden">
         <p id="end-message"></p>
         <button id="restart-button">Rejouer</button>
+        <button id="home-button">Retour au Menu</button>
     </div>
 
-    <audio id="bg-music" loop autoplay>
-        <source src="sound/Intro.mp3" type="audio/mpeg">
-        Votre navigateur ne supporte pas l'élément audio.
-    </audio>
+    <audio id="theme-song" src="sound/theme-song.mp3" loop volume="0.5" preload="auto"></audio>
+    <audio id="suspense-sound" src="sound/suspense.mp3" volume="0.7" preload="auto"></audio>
+    <audio id="correct-sound" src="sound/correct.mp3" volume="0.8" preload="auto"></audio>
+    <audio id="incorrect-sound" src="sound/incorrect.mp3" volume="0.8" preload="auto"></audio>
+    <audio id="start-jingle" src="sound/jingle.mp3" volume="0.6" preload="auto"></audio>
 
-    <audio id="game-jingle">
-        <source src="sound/Beginning.mp3" type="audio/mpeg">
-        Votre navigateur ne supporte pas l'élément audio.
-    </audio>
-
-    <script src="script.js"></script> <!-- Inclure le script principal du jeu -->
-    <script src="questions.js"></script> <!-- Inclure le fichier des questions -->
-
-</body>
+    <script src="script.js"></script> <script src="questions.js"></script> </body>
 </html>
