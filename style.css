@@ -119,7 +119,7 @@ h1 {
     width: 100%;
     height: 100vh;
     position: fixed;
-    top: 0;
+    top: -50px;
     left: 0;
     background-color: rgba(0, 0, 50, 0.9);
     color: white;
@@ -409,7 +409,6 @@ h1 {
         margin-bottom: 5px;
         width: 100%;
         max-width: 300px;
-        min-height: 50px;
         color: white;
         font-weight: bold;
         text-align: center;
@@ -823,13 +822,13 @@ h1 {
         box-sizing: border-box;
         width: 100vw !important;
         overflow-x: hidden !important;
-        min-height: 100dvh; /* Garde ça pour la hauteur initiale basée sur le viewport dynamique */
+        min-height: 80dvh; /* Garde ça pour la hauteur initiale basée sur le viewport dynamique */
         overflow-y: hidden; /* Garde ça pour masquer la barre de défilement */
     }
 
     h1#title {
         font-size: 30px;
-        margin-bottom: 8px; /* Réduit légèrement la marge */
+        margin-bottom: 2px; /* Réduit légèrement la marge */
         color: white;
     }
 
@@ -839,7 +838,7 @@ h1 {
 
     #game {
         padding-top: 10px;
-        padding-bottom: 50px;
+        padding-bottom: 100px;
         /* min-height: 100dvh; /* Supprime ou commente cette ligne */
         box-sizing: border-box;
         justify-content: flex-start;
@@ -884,7 +883,7 @@ h1 {
     }
 
     #question-background-container {
-        width: 95% !important; /* Utilise un pourcentage */
+        width: 100% !important; /* Utilise un pourcentage */
         max-width: none !important;
         margin-left: auto !important;
         margin-right: auto !important;
@@ -907,7 +906,6 @@ h1 {
     }
 
     .answers-container {
-        width: 95%;
         margin-bottom: 10px; /* Réduit la marge du bas */
         display: flex;
         flex-direction: column;
@@ -926,13 +924,15 @@ h1 {
     }
 
     #answers button {
-        margin: 3px 0; /* Réduit légèrement la marge verticale des boutons */
+        margin: 2px 0; /* Réduit légèrement la marge verticale des boutons */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         font-size: 1em; /* Réduit légèrement la taille de la police des boutons */
-        padding: 10px; /* Réduit légèrement le padding des boutons */
+        padding-top: 6px;
+        padding-bottom: 6px;
+
     }
 
     #game-header {
