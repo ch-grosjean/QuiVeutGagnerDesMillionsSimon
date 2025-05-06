@@ -823,6 +823,8 @@ h1 {
         box-sizing: border-box; /* Important pour inclure le padding dans la hauteur */
         width: 100vw !important; /* Force la largeur à la largeur de la fenêtre visible */
         overflow-x: hidden !important; /* Empêche le défilement horizontal */
+        min-height: 100dvh; /* Ajout de la hauteur dynamique */
+        overflow-y: hidden; /* Ajout pour masquer la barre de défilement */
     }
 
     h1#title {
@@ -838,10 +840,11 @@ h1 {
     #game {
         padding-top: 10px;
         padding-bottom: 50px; /* Ajoute un padding en bas pour l'espace de la barre de navigation */
-        min-height: calc(100vh - 50px); /* Réduit la hauteur minimale pour tenir compte du padding */
+        min-height: 100dvh; /* Utilisation de dvh pour la hauteur dynamique */
         box-sizing: border-box; /* Important pour inclure le padding dans la hauteur */
         justify-content: flex-start; /* Aligner le contenu depuis le haut */
         max-width: 100% !important; /* Force la largeur du conteneur du jeu */
+        overflow-y: hidden; /* Ajout pour masquer la barre de défilement *//
     }
 
     #avatar-zone .avatar-container img {
