@@ -185,10 +185,32 @@ function showPalierPage() {
         playSound(startJingle);
     }
 
-    // Passer au jeu au clic sur l'image
-    if (palierImageClic) {
-        palierImageClic.addEventListener('click', startGame); // Lancer le jeu au clic
+    let gameStarted = false; // Variable pour s'assurer que le jeu ne démarre qu'une seule fois
+
+    // Fonction pour démarrer le jeu
+    function startGameOnInteraction() {
+        if (!gameStarted) {
+            gameStarted = true;
+            startGame();
+            palierPage.removeEventListener('click', startGameOnInteraction);
+            palierPage.removeEventListener('touchstart', startGameOnInteraction); // Pour les écrans tactiles
+            clearTimeout(autoStartTimeout); // Annuler le timeout automatique si l'utilisateur interagit
+        }
     }
+
+    // Ajouter des écouteurs d'événements pour démarrer le jeu au clic ou au toucher
+    palierPage.addEventListener('click', startGameOnInteraction);
+    palierPage.addEventListener('touchstart', startGameOnInteraction);
+
+    // Démarrer le jeu automatiquement après 5 secondes si aucune interaction
+    const autoStartTimeout = setTimeout(() => {
+        if (!gameStarted) {
+            gameStarted = true;
+            startGame();
+            palierPage.removeEventListener('click', startGameOnInteraction);
+            palierPage.removeEventListener('touchstart', startGameOnInteraction);
+        }
+    }, 3000);
 }
 
 function startGame() {
@@ -207,7 +229,7 @@ function startGame() {
         voteButton: document.getElementById("joker-vote"),
         fiftyButton: document.getElementById("joker-50"),
         passButton: document.getElementById("joker-passer"),
-        quitButton: document.getElementById("quit-button-top"), // Cibler l'ID correct
+        quitButton: document.getElementById("quit-button-top"), 
         restartButton: document.getElementById("restart-button"),
         homeButton: document.getElementById("home-button")
     };
