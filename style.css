@@ -946,54 +946,6 @@ h1 {
     }
 }
 
-/*Redmi Note Pro 11 (MODIFIÉ)*/
-@media (min-width: 390px) and (max-width: 396px) {
-    #game {
-        padding-bottom: 60px; /* Ajuste le padding bottom pour cet appareil */
-        min-height: calc(100vh - 60px); /* Ajuste la hauteur minimale */
-    }
-
-    #palier-page {
-        max-width: 95%; /* Assure-toi qu'elle ne dépasse pas la largeur */
-        transform: scale(0.95); /* Réduit légèrement l'échelle */
-    }
-
-    #avatar-zone .avatar-container img {
-        max-height: 200px !important; /* Réduit légèrement la taille de l'avatar */
-    }
-
-    .joker-button img {
-        max-width: 80px; /* Ajuste la taille des icônes des jokers */
-    }
-
-    .quit-button-top {
-        left: 35px; /* Ajuste légèrement la position left */
-        top: -105px; /* Ajuste légèrement la position top */
-    }
-
-    #question-background-container {
-        width: 100%;
-        transform: scale(0.9);
-    }
-
-
-    .answers-container {
-        flex-direction: column;
-        align-items: center; 
-        transform: scale(0.9);
-    }
-
-    .answers {
-        padding-top: 5px; /* Réduit légèrement le padding top */
-        flex-direction: column;
-        align-items: center; 
-    }
-
-    #answers button {
-        font-size: 1em; /* Réduit légèrement la taille de la police des boutons */
-        padding: 10px; /* Réduit légèrement le padding des boutons */
-    }
-}
 
 /* ==========================================================================
    QUERY FOR MEDIUM PHONES (environ 481px à 768px)
