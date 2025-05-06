@@ -900,13 +900,10 @@ h1 {
         max-width: none !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        transform: scale(0.8);
     }
 
     .answers-container {
         width: 95%;
-        margin-left: auto;
-        margin-right: auto;
         margin-bottom: 10px; /* Réduit la marge du bas */
         display: flex;
         flex-direction: column;
@@ -915,7 +912,6 @@ h1 {
         max-width: none !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        transform: scale(0.8) translateY(-10px);
     }
 
     .answers {
