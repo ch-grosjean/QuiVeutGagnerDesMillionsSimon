@@ -817,9 +817,12 @@ h1 {
    ========================================================================== */
    @media (max-width: 480px) {
     body {
-        padding-top: 5px;
+        padding: 0;
+        margin: 0;
         font-size: 16px;
         box-sizing: border-box; /* Important pour inclure le padding dans la hauteur */
+        width: 100vw !important; /* Force la largeur à la largeur de la fenêtre visible */
+        overflow-x: hidden !important; /* Empêche le défilement horizontal */
     }
 
     h1#title {
@@ -838,6 +841,9 @@ h1 {
         min-height: calc(100vh - 50px); /* Réduit la hauteur minimale pour tenir compte du padding */
         box-sizing: border-box; /* Important pour inclure le padding dans la hauteur */
         justify-content: flex-start; /* Aligner le contenu depuis le haut */
+        width: 100% !important; /* Force la largeur du conteneur du jeu */
+        transform: scale(0.95) translateX(-200px); /* Essaie un léger dézoom sur le body si nécessaire */
+        transform-origin: top left;
     }
 
     #avatar-zone .avatar-container img {
@@ -872,13 +878,14 @@ h1 {
     }
 
     #palier-page {
-        max-width: 95%; /* Assure-toi qu'elle ne dépasse pas la largeur */
-        transform: scale(0.9); /* Réduit légèrement l'échelle */
+        max-width: 100%; /* Assure-toi qu'elle ne dépasse pas la largeur */
     }
 
     #question-background-container {
-        width: 90%; /* Utilise un pourcentage pour une meilleure adaptabilité */
-        max-width: 400px; /* Limite la largeur maximale */
+        width: 95% !important; /* Utilise un pourcentage */
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     #question-container {
@@ -891,7 +898,10 @@ h1 {
         text-align: center;
         box-sizing: border-box;
         height: auto; /* Permet à la hauteur de s'adapter au contenu */
-        max-height: none;
+        width: 95% !important; /* Utilise un pourcentage */
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .answers-container {
@@ -902,6 +912,10 @@ h1 {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 95% !important; /* Utilise un pourcentage */
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .answers {
