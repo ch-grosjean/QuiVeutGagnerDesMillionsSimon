@@ -842,8 +842,6 @@ h1 {
         box-sizing: border-box; /* Important pour inclure le padding dans la hauteur */
         justify-content: flex-start; /* Aligner le contenu depuis le haut */
         width: 100% !important; /* Force la largeur du conteneur du jeu */
-        transform: scale(0.95) translateX(-200px); /* Essaie un léger dézoom sur le body si nécessaire */
-        transform-origin: top left;
     }
 
     #avatar-zone .avatar-container img {
@@ -894,7 +892,7 @@ h1 {
         margin-right: auto;
         font-size: 1.2em; /* Réduit légèrement la taille de la police */
         padding: 10px; /* Réduit légèrement le padding */
-        margin-bottom: 5px; /* Réduit la marge du bas */
+        margin-bottom: 2px; /* Réduit la marge du bas */
         text-align: center;
         box-sizing: border-box;
         height: auto; /* Permet à la hauteur de s'adapter au contenu */
@@ -902,6 +900,7 @@ h1 {
         max-width: none !important;
         margin-left: auto !important;
         margin-right: auto !important;
+        transform: scale(0.8);
     }
 
     .answers-container {
@@ -916,6 +915,7 @@ h1 {
         max-width: none !important;
         margin-left: auto !important;
         margin-right: auto !important;
+        transform: scale(0.8) translateY(-10px);
     }
 
     .answers {
