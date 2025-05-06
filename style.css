@@ -840,11 +840,6 @@ h1 {
         justify-content: flex-start; /* Aligner le contenu depuis le haut */
     }
 
-   #palier-page {
-        max-width: 95%; /* Assure-toi qu'elle ne dépasse pas la largeur */
-        transform: scale(0.9); /* Réduit légèrement l'échelle */
-    }
-
     #avatar-zone .avatar-container img {
         max-height: 160px; /* Réduit légèrement la taille de l'avatar */
     }
@@ -874,6 +869,11 @@ h1 {
         position: absolute;
         top: -100px; /* Ajuste légèrement la position top */
         left: 45px; /* Ajuste légèrement la position left */
+    }
+
+    #palier-page {
+        max-width: 95%; /* Assure-toi qu'elle ne dépasse pas la largeur */
+        transform: scale(0.9); /* Réduit légèrement l'échelle */
     }
 
     #question-background-container {
@@ -953,6 +953,11 @@ h1 {
         min-height: calc(100vh - 60px); /* Ajuste la hauteur minimale */
     }
 
+    #palier-page {
+        max-width: 95%; /* Assure-toi qu'elle ne dépasse pas la largeur */
+        transform: scale(0.95); /* Réduit légèrement l'échelle */
+    }
+
     #avatar-zone .avatar-container img {
         max-height: 200px !important; /* Réduit légèrement la taille de l'avatar */
     }
@@ -968,11 +973,14 @@ h1 {
 
     #question-background-container {
         width: 100%;
+        transform: scale(0.9);
     }
+
 
     .answers-container {
         flex-direction: column;
         align-items: center; 
+        transform: scale(0.9);
     }
 
     .answers {
