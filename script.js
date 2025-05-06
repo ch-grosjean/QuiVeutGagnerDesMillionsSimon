@@ -532,3 +532,17 @@ function quitGame() {
     playTheme();
 }
 
+function setGameHeight() {
+    const viewportHeight = window.innerHeight;
+    const gameElement = document.getElementById('game');
+    if (gameElement) {
+        gameElement.style.minHeight = viewportHeight + 'px';
+    }
+}
+
+// Appeler la fonction au chargement de la page
+window.addEventListener('load', setGameHeight);
+
+// Appeler la fonction au redimensionnement de la fenêtre (y compris changement d'orientation)
+window.addEventListener('resize', setGameHeight);
+
