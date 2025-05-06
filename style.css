@@ -841,7 +841,7 @@ h1 {
         min-height: calc(100vh - 50px); /* Réduit la hauteur minimale pour tenir compte du padding */
         box-sizing: border-box; /* Important pour inclure le padding dans la hauteur */
         justify-content: flex-start; /* Aligner le contenu depuis le haut */
-        width: 100% !important; /* Force la largeur du conteneur du jeu */
+        max-width: 100% !important; /* Force la largeur du conteneur du jeu */
     }
 
     #avatar-zone .avatar-container img {
