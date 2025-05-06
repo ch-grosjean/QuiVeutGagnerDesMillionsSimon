@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -17,14 +18,9 @@
     <div id="options-menu" class="hidden">
         <h2>Options Audio</h2>
         <div class="audio-settings">
-            <label for="game-volume">Volume du Jeu :</label>
+            <label for="game-volume">Volume de la Musique :</label>
             <input type="range" id="game-volume" min="0" max="1" step="0.05" value="0.2">
             <span id="game-volume-value">20%</span>
-        </div>
-        <div class="audio-settings">
-            <label for="sfx-volume">Volume des Effets Sonores :</label>
-            <input type="range" id="sfx-volume" min="0" max="1" step="0.05" value="1">
-            <span id="sfx-volume-value">100%</span>
         </div>
         <button id="back-to-menu">Retour au Menu</button>
     </div>
@@ -34,7 +30,8 @@
         <div id="star-container-menu"></div>
         <div class="content-container">
             <img src="image/Logo-Qui-veut-gagner-des-millions.png" alt="Logo du jeu" width="200">
-            <h1>Qui veut gagner des millions ?<br>Simon Edition</h1>
+            <h1 id="title">Qui veut gagner des millions ?</h1>
+            <h2 id="subtitle">Simon Edition</h2>
             <br>
             <button id="start-button">Nouvelle Partie</button>
             <button id="options-button">Options</button>
@@ -43,7 +40,23 @@
 
     <div id="palier-page" class="hidden">
         <h2>Les Paliers</h2>
-        <img id="palier-image" src="image/palier.jpg" alt="Liste des paliers">
+        <div id="palier-list">
+            <div class="palier-row palier-15"><span class="question-number">15</span> <span class="amount">1 000 000 €</span></div>
+            <div class="palier-row palier-14"><span class="question-number">14</span> <span class="amount">300 000 €</span></div>
+            <div class="palier-row palier-13"><span class="question-number">13</span> <span class="amount">150 000 €</span></div>
+            <div class="palier-row palier-12"><span class="question-number">12</span> <span class="amount">100 000 €</span></div>
+            <div class="palier-row palier-11"><span class="question-number">11</span> <span class="amount">72 000 €</span></div>
+            <div class="palier-row palier-10 palier-secure"><span class="question-number">10</span> <span class="amount">48 000 €</span></div>
+            <div class="palier-row palier-9"><span class="question-number">9</span> <span class="amount">24 000 €</span></div>
+            <div class="palier-row palier-8"><span class="question-number">8</span> <span class="amount">12 000 €</span></div>
+            <div class="palier-row palier-7"><span class="question-number">7</span> <span class="amount">6 000 €</span></div>
+            <div class="palier-row palier-6"><span class="question-number">6</span> <span class="amount">3 000 €</span></div>
+            <div class="palier-row palier-5 palier-secure"><span class="question-number">5</span> <span class="amount">1 500 €</span></div>
+            <div class="palier-row palier-4"><span class="question-number">4</span> <span class="amount">800 €</span></div>
+            <div class="palier-row palier-3"><span class="question-number">3</span> <span class="amount">500 €</span></div>
+            <div class="palier-row palier-2"><span class="question-number">2</span> <span class="amount">300 €</span></div>
+            <div class="palier-row palier-1 palier-start"><span class="question-number">1</span> <span class="amount">200 €</span></div>
+        </div>
         <img id="palier-image-clic" src="image/continue.png" alt="Cliquez pour continuer">
     </div>
 
@@ -56,21 +69,23 @@
                     <p id="question-info"></p> </div>
             </div>
 
-            <div id="avatar-zone">
-                <div class="avatar-container">
-                    <img src="image/Skip.png" alt="Avatar">
-                </div>
-                <div class="jokers-top">
-                    <button class="joker-button" id="joker-50" onclick="useFiftyFifty()">
-                        <img src="image/50.png" alt="Joker 50/50" />
-                    </button>
-                    <button class="joker-button" id="joker-vote" onclick="usePublicVote()">
-                        <img src="image/vote.png" alt="Joker Vote du public" />
-                    </button>
-                    <button class="joker-button" id="joker-passer" onclick="usePasse()">
-                        <img src="image/next.png" alt="Joker Passer" />
-                    </button>
-                    <button class="quit-button-top" id="quit-button-top">Quitter</button>
+            <div id="question-background-container">
+                <div id="avatar-zone">
+                    <div class="avatar-container">
+                        <img src="image/Skip.png" alt="Avatar">
+                    </div>
+                    <div class="jokers-top">
+                        <button class="joker-button" id="joker-50">
+                            <img src="image/50.png" alt="Joker 50/50" />
+                        </button>
+                        <button class="joker-button" id="joker-vote">
+                            <img src="image/vote.png" alt="Joker Vote du public" />
+                        </button>
+                        <button class="joker-button" id="joker-passer">
+                            <img src="image/next.png" alt="Joker Passer" />
+                        </button>
+                        <button class="quit-button-top" id="quit-button-top">Quitter</button>
+                    </div>
                 </div>
             </div>
 
@@ -106,7 +121,8 @@
 
     <div id="vote-popup" class="popup hidden">
         <h3>Vote du public</h3>
-        <div id="vote-results"></div>
+        <div id="vote-results">
+            </div>
         <button onclick="closeVotePopup()">Fermer</button>
     </div>
 
@@ -116,7 +132,7 @@
         <button id="home-button">Retour au Menu</button>
     </div>
 
-    <audio id="theme-song" src="sound/theme-song.mp3" loop volume="0.5" preload="auto"></audio>
+    <audio id="theme-song" src="sound/theme-song.mp3" loop volume="0.1" preload="auto"></audio>
     <audio id="suspense-sound" src="sound/suspense.mp3" volume="0.7" preload="auto"></audio>
     <audio id="correct-sound" src="sound/correct.mp3" volume="0.8" preload="auto"></audio>
     <audio id="incorrect-sound" src="sound/incorrect.mp3" volume="0.8" preload="auto"></audio>
