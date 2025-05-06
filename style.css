@@ -840,6 +840,11 @@ h1 {
         justify-content: flex-start; /* Aligner le contenu depuis le haut */
     }
 
+   #palier-page {
+        max-width: 95%; /* Assure-toi qu'elle ne dépasse pas la largeur */
+        transform: scale(0.9); /* Réduit légèrement l'échelle */
+    }
+
     #avatar-zone .avatar-container img {
         max-height: 160px; /* Réduit légèrement la taille de l'avatar */
     }
