@@ -188,29 +188,28 @@ function showPalierPage() {
     let gameStarted = false; // Variable pour s'assurer que le jeu ne démarre qu'une seule fois
 
     // Fonction pour démarrer le jeu
-    function startGameOnInteraction() {
+    function startGameOnInteraction(event) {
         if (!gameStarted) {
             gameStarted = true;
             startGame();
-            palierPage.removeEventListener('click', startGameOnInteraction);
-            palierPage.removeEventListener('touchstart', startGameOnInteraction); // Pour les écrans tactiles
-            clearTimeout(autoStartTimeout); // Annuler le timeout automatique si l'utilisateur interagit
+            const skipInstruction = document.getElementById('skip-instruction');
+            if (skipInstruction) {
+                skipInstruction.removeEventListener('click', startGameOnInteraction);
+                skipInstruction.removeEventListener('touchstart', startGameOnInteraction);
+            }
+            clearTimeout(autoStartTimeout);
+            event.stopPropagation(); // Empêche l'événement de clic de se propager
         }
     }
 
-    // Ajouter des écouteurs d'événements pour démarrer le jeu au clic ou au toucher
-    palierPage.addEventListener('click', startGameOnInteraction);
-    palierPage.addEventListener('touchstart', startGameOnInteraction);
+    // Ajouter des écouteurs d'événements pour démarrer le jeu au clic ou au toucher SUR #skip-instruction
+    const skipInstructionElement = document.getElementById('skip-instruction');
+    if (skipInstructionElement) {
+        skipInstructionElement.addEventListener('click', startGameOnInteraction);
+        skipInstructionElement.addEventListener('touchstart', startGameOnInteraction);
+    }
 
-    // Démarrer le jeu automatiquement après 5 secondes si aucune interaction
-    const autoStartTimeout = setTimeout(() => {
-        if (!gameStarted) {
-            gameStarted = true;
-            startGame();
-            palierPage.removeEventListener('click', startGameOnInteraction);
-            palierPage.removeEventListener('touchstart', startGameOnInteraction);
-        }
-    }, 7000);
+    
 }
 
 function startGame() {
