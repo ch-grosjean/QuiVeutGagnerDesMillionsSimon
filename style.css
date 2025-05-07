@@ -284,7 +284,7 @@ h1 {
         max-width: 800px; /* Ou une largeur maximale en pixels */
         margin-left: auto; /* Centre horizontalement en poussant la marge à gauche */
         margin-right: auto; /* Centre horizontalement en poussant la marge à droite */
-        margin-bottom: 10px; /* Garde ou ajuste la marge du bas */
+        margin-bottom: 18px; /* Garde ou ajuste la marge du bas */
         z-index: 0;
     }
 
@@ -369,7 +369,7 @@ h1 {
    Questions
    ========================================================================== */
    #question-container {
-        width: 650px;
+        width: 600px;
         height: 150px;
         background-image: url('image/QuestionSQ.png'); /* Remplace par ton image */
         background-size: cover; /* L'image couvre toute la zone sans déformation */
@@ -453,10 +453,12 @@ h1 {
         display: grid;
         grid-template-columns: 1fr 1fr; /* Deux colonnes de largeur égale */
         gap: 10px; /* Espacement entre les boutons */
-        width: 90%; /* Ajuste la largeur du conteneur des réponses */
+        width: 100%;
         max-width: 600px; /* Limite la largeur maximale si nécessaire */
         margin-left: auto; /* Centre horizontalement */
         margin-right: auto; /* Centre horizontalement */
+        justify-content: center;
+        align-items: center;
     }
     
 /* ==========================================================================
@@ -814,22 +816,21 @@ h1 {
         }
 
         #question-background-container {
-            width: 100% !important;
-            max-width: none !important;
+            width: 420px;
             margin-left: 0 !important;
             margin-right: 0 !important;
         }
 
         #question-container {
-            width: 95% !important;
+            width: 340px;
             margin-left: auto;
             margin-right: auto;
             font-size: 1.2em;
             padding: 17px;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             text-align: center;
             box-sizing: border-box;
-            height: auto;
+            height: 120px;
         }
 
         .answers-container {
@@ -847,7 +848,7 @@ h1 {
             gap: 3px !important;
             display: flex;
             flex-direction: column;
-            align-items: stretch;
+            align-items: center;
         }
 
         #answers button {
