@@ -197,7 +197,7 @@ function showPalierPage() {
                 skipInstruction.removeEventListener('click', startGameOnInteraction);
                 skipInstruction.removeEventListener('touchstart', startGameOnInteraction);
             }
-            clearTimeout(autoStartTimeout);
+            // clearTimeout(autoStartTimeout); // Assure-toi que le timeout est bien supprimé
             event.stopPropagation(); // Empêche l'événement de clic de se propager
         }
     }
