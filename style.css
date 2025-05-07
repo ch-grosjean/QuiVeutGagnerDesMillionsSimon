@@ -128,18 +128,18 @@ h1 {
     background-repeat: no-repeat; /* Empêcher la répétition de l'image */
     background-size: cover; /* Étirer l'image pour couvrir toute la zone */
     background-position: center; /* Centrer l'image */
-    min-height: 100vh; /* Assure-toi que la page prend au moins toute la hauteur de l'écran */
-
     }
 
     #palier-page h2 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
+        font-size: 2.2em;
+        margin-bottom: 10px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-top: 0; /* Ajoute une marge en haut du titre pour l'espacer du bord */
+        margin-bottom: 20px; /* Ajoute une marge en bas du titre pour l'espacer du tableau */
     }
 
     #palier-list {
-        width: 80%; /* Ajuster la largeur de la liste */
+        width: 90%; /* Ajuster la largeur de la liste */
         max-width: 500px; /* Limiter la largeur maximale sur les grands écrans */
         margin-bottom: 30px;
         border: 2px solid #ffc107; /* Bordure pour la liste */
@@ -153,7 +153,7 @@ h1 {
         display: flex;
         justify-content: space-between; /* Espacer le numéro et le montant */
         align-items: center;
-        padding: 10px 15px;
+        padding: 5px 8px;
         border-bottom: 1px solid #555; /* Séparer les lignes */
         font-size: 1.1em;
     }
@@ -813,6 +813,12 @@ h1 {
 
         #palier-page {
             max-width: 100%;
+            
+        }
+
+        #palier-page th, #palier-page td {
+            padding-top: 5px !important; /* Réduit le padding vertical */
+            padding-bottom: 5px !important; /* Réduit le padding vertical */
         }
 
         #question-background-container {
