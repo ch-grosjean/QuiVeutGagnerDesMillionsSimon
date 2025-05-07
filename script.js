@@ -173,43 +173,37 @@ function createStars(containerId, numStars) {
 
 function showPalierPage() {
     menu.classList.add("hidden");
-    palierPage.classList.remove("hidden"); // Afficher la page des paliers
+    palierPage.classList.remove("hidden");
     game.classList.add("hidden");
     document.getElementById("endgame").classList.add("hidden");
 
     stopTheme();
     stopSuspense();
 
-    // Jouer le jingle de démarrage
     if (startJingle) {
         playSound(startJingle);
     }
 
-    let gameStarted = false; // Variable pour s'assurer que le jeu ne démarre qu'une seule fois
+    let gameStarted = false;
+    const skipInstructionElement = document.getElementById('skip-instruction');
 
-    // Fonction pour démarrer le jeu
-    function startGameOnInteraction(event) {
+    function startGameOnInteraction() {
         if (!gameStarted) {
             gameStarted = true;
-            startGame();
-            const skipInstruction = document.getElementById('skip-instruction');
-            if (skipInstruction) {
-                skipInstruction.removeEventListener('click', startGameOnInteraction);
-                skipInstruction.removeEventListener('touchstart', startGameOnInteraction);
+            if (skipInstructionElement) {
+                skipInstructionElement.removeEventListener('click', startGameOnInteraction);
+                skipInstructionElement.removeEventListener('touchstart', startGameOnInteraction);
             }
-            // clearTimeout(autoStartTimeout); // Assure-toi que le timeout est bien supprimé
-            event.stopPropagation(); // Empêche l'événement de clic de se propager
+            setTimeout(() => {
+                startGame();
+            }, 50);
         }
     }
 
-    // Ajouter des écouteurs d'événements pour démarrer le jeu au clic ou au toucher SUR #skip-instruction
-    const skipInstructionElement = document.getElementById('skip-instruction');
     if (skipInstructionElement) {
         skipInstructionElement.addEventListener('click', startGameOnInteraction);
         skipInstructionElement.addEventListener('touchstart', startGameOnInteraction);
     }
-
-    
 }
 
 function startGame() {
