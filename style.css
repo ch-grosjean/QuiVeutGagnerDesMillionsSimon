@@ -119,7 +119,6 @@ h1 {
     width: 100%;
     height: 100vh;
     position: fixed;
-    top: -50px;
     left: 0;
     background-color: rgba(0, 0, 50, 0.9);
     color: white;
@@ -282,7 +281,7 @@ h1 {
     #question-background-container {
         position: relative; /* Garde la position relative pour le positionnement absolu de l'image de fond */
         width: 90%; /* Définis une largeur maximale (ajuste ce pourcentage selon tes besoins) */
-        max-width: 600px; /* Ou une largeur maximale en pixels */
+        max-width: 800px; /* Ou une largeur maximale en pixels */
         margin-left: auto; /* Centre horizontalement en poussant la marge à gauche */
         margin-right: auto; /* Centre horizontalement en poussant la marge à droite */
         margin-bottom: 10px; /* Garde ou ajuste la marge du bas */
@@ -404,8 +403,8 @@ h1 {
         border: 2px solid #FFEB3B; /* Bordure jaune */
         font-size: 18px;
         cursor: pointer;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-top: 8px; /* Augmente légèrement la marge verticale par défaut */
+        margin-bottom: 8px; /* Augmente légèrement la marge verticale par défaut */
         width: 100%;
         max-width: 300px;
         color: white;
@@ -421,6 +420,8 @@ h1 {
         transition: background-color 0.5s ease, transform 0.3s ease;
         clip-path: polygon(15% 0%, 85% 0%, 90% 50%, 85% 100%, 15% 100%, 10% 50%); /* Forme hexagonale */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ajouter un ombrage pour mieux voir la forme */
+        padding-top: 20px; /* Ajoute du padding vertical pour augmenter la hauteur par défaut */
+        padding-bottom: 20px; /* Ajoute du padding vertical pour augmenter la hauteur par défaut */
     }
 
     /* Effet hover pour les boutons */
@@ -442,7 +443,7 @@ h1 {
 
     .answers-container {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         display: flex;
         justify-content: center; /* Centre le conteneur .answers */
         align-items: center; /* Centre verticalement si nécessaire */
@@ -732,390 +733,230 @@ h1 {
 }
 
 /* ==========================================================================
-   QUERY FOR TABLETS (max-width: 768px)
+   QUERY FOR PHONES & TABLETS
    ========================================================================== */
-   @media (min-width: 492px) and (max-width: 768px) {
-    #game {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 10px; /* Remettre un padding de base */
+
+    /* Très petits téléphones (jusqu'à 320px)*/
+    @media (max-width: 320px) {
+        /* ... tes styles pour les très petits écrans ... */
     }
 
-    #game-header {
-        margin-bottom: 15px;
-    }
-    
-    #avatar-zone {
-        margin-bottom: 15px;
-    }
+    /* Petits téléphones (jusqu'à 480px) */
+    @media (max-width: 480px) {
+        body {
+            padding: 0;
+            margin: 0px;
+            font-size: 16px;
+            box-sizing: border-box;
+            width: 100vw !important;
+            overflow-x: hidden !important;
+            min-height: 80dvh;
+            overflow-y: hidden;
+        }
 
-  
-    #avatar-zone .avatar-container img {
-        max-height: 200px; /* Taille légèrement réduite pour les tablettes */
-    }
+        h1#title {
+            font-size: 30px;
+            margin-bottom: 2px;
+            color: white;
+        }
 
-    .jokers-top {
-        flex-direction: row;
-        justify-content: space-around;
-    }
+        h2#subtitle {
+            font-size: 20px;
+        }
 
-    .joker-button {
-        padding: 5px; /* Réduire le padding des boutons joker */
-        font-size: 10px; /* Réduire la taille de la police des boutons joker */
-    }
+        #game {
+            padding-top: 10px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+            justify-content: flex-start;
+            width: 100% !important;
+            overflow-y: hidden;
+        }
 
-    .joker-button img {
-        max-width: 18px;
-    }
+        #content-container {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
 
-    .quit-button-top {
-        padding: 5px 8px;
-        font-size: 10px;
-    }
+        #avatar-zone .avatar-container img {
+            max-height: 160px;
+        }
 
-    #question-container {
-        font-size: 1.1em; /* Réduire la taille de la police de la question */
-        padding: 8px; /* Réduire le padding de la question */
-        margin-bottom: 8px;
-    }
+        .avatar-container img {
+            padding: 15px;
+        }
 
-    .answers-container {
-        width: 90%; /* Réduire légèrement la largeur du conteneur */
-        margin-left: auto; /* Centrer horizontalement */
-        margin-right: auto; /* Centrer horizontalement */
-        margin-bottom: 20px; /* Ajuster la marge du bas */
-        display: flex;
-        flex-direction: column;
-        align-items: stretch; /* Étirer les éléments enfants (boutons) */
-        justify-content: center;
-    }
+        .joker-button {
+            padding: 4px;
+            font-size: 10px;
+        }
 
-    .answers {
-        display: flex;
-        flex-direction: column;
-        gap: 10px; /* Ajuster l'espacement entre les boutons */
-        width: 100%; /* Les boutons prennent toute la largeur du conteneur parent */
-    }
+        .joker-button img {
+            max-width: 70px;
+        }
 
-    #answers button {
-        width: 100%; /* S'assurer que les boutons prennent toute la largeur de .answers */
-        margin: 5px 0; /* Marge verticale entre les boutons */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-}
+        .quit-button-top {
+            background-color: #dc3545;
+            color: white;
+            padding: 6px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            z-index: 30;
+            position: absolute;
+            top: -100px;
+            left: 45px;
+        }
 
-/* ==========================================================================
-   QUERY FOR SMALL PHONES (jusqu'à 480px) (MODIFIÉ)
-   ========================================================================== */
-   @media (max-width: 480px) {
-    body {
-        padding: 0;
-        margin: 0px;
-        font-size: 16px;
-        box-sizing: border-box;
-        width: 100vw !important;
-        overflow-x: hidden !important;
-        min-height: 80dvh; /* Garde ça pour la hauteur initiale basée sur le viewport dynamique */
-        overflow-y: hidden; /* Garde ça pour masquer la barre de défilement */
-    }
+        #palier-page {
+            max-width: 100%;
+        }
 
-    h1#title {
-        font-size: 30px;
-        margin-bottom: 2px; /* Réduit légèrement la marge */
-        color: white;
-    }
+        #question-background-container {
+            width: 100% !important;
+            max-width: none !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
 
-    h2#subtitle {
-        font-size: 20px;
-    }
+        #question-container {
+            width: 95% !important;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.2em;
+            padding: 17px;
+            margin-bottom: 5px;
+            text-align: center;
+            box-sizing: border-box;
+            height: auto;
+        }
 
-    #game {
-        padding-top: 10px;
-        padding-bottom: 100px;
-        /* min-height: 100dvh; /* Supprime ou commente cette ligne */
-        box-sizing: border-box;
-        justify-content: flex-start;
-        width: 100% !important;
-        overflow-y: hidden; /* Garde ça pour masquer la barre de défilement */
-        /* La hauteur minimale sera gérée par le JavaScript */
-    }
+        .answers-container {
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 95% !important;
+            max-width: none !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
 
-    #avatar-zone .avatar-container img {
-        max-height: 160px; /* Réduit légèrement la taille de l'avatar */
-    }
+        .answers {
+            gap: 3px !important;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
 
-    .avatar-container img {
-        padding: 15px; /* Réduit légèrement le padding de l'avatar */
-    }
+        #answers button {
+            font-size: 1.1em !important; /* Augmente légèrement la taille de la police si nécessaire */
+            padding-top: 10px !important; /* Augmente le padding en haut */
+            padding-bottom: 10px !important; /* Augmente le padding en bas */
+            margin-top: 6px !important; /* Ajoute de la marge au-dessus de chaque bouton */
+            margin-bottom: 6px !important; /* Ajoute de la marge en dessous de chaque bouton */
+            line-height: 1.5 !important;
+        }
 
-    .joker-button {
-        padding: 4px; /* Réduit légèrement le padding des jokers */
-        font-size: 10px; /* Réduit légèrement la police des jokers */
-    }
+        #game-header {
+            margin-bottom: 1px;
+            padding-left: 5px;
+        }
 
-    .joker-button img {
-        max-width: 70px; /* Réduit légèrement la taille des icônes des jokers */
-    }
+        #avatar-zone {
+            margin-bottom: 10px;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 5px;
+        }
 
-    .quit-button-top {
-        background-color: #dc3545;
-        color: white;
-        padding: 6px 10px; /* Réduit légèrement le padding du bouton quitter */
-        font-size: 12px; /* Réduit légèrement la police du bouton quitter */
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        z-index: 30;
-        position: absolute;
-        top: -100px; /* Ajuste légèrement la position top */
-        left: 45px; /* Ajuste légèrement la position left */
-    }
+        .jokers-top {
+            flex-direction: row;
+            justify-content: space-around;
+            width: 95%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
 
-    #palier-page {
-        max-width: 100%; /* Assure-toi qu'elle ne dépasse pas la largeur */
-    }
-
-    #question-background-container {
-        width: 100% !important; /* Utilise un pourcentage */
-        max-width: none !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        .answers-container {
+            margin-bottom: 6px;
+        }
     }
 
-    #question-container {
-        width: 95%; /* Utilise un pourcentage pour une meilleure adaptabilité */
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 1.2em; /* Réduit légèrement la taille de la police */
-        padding: 10px; /* Réduit légèrement le padding */
-        margin-bottom: 2px; /* Réduit la marge du bas */
-        text-align: center;
-        box-sizing: border-box;
-        height: auto; /* Permet à la hauteur de s'adapter au contenu */
-        width: 95% !important; /* Utilise un pourcentage */
-        max-width: none !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+    /* Moyens téléphones (481px à 600px) */
+    @media (min-width: 481px) and (max-width: 600px) {
+        body {
+            font-size: 18px;
+            padding-top: 5px;
+        }
+
+        #game {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #content-container {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        #avatar-zone .avatar-container img {
+            max-height: 180px;
+        }
+
+        .joker-button {
+            padding: 8px;
+            font-size: 13px;
+        }
+
+        .joker-button img {
+            max-width: 60px;
+        }
+
+        .quit-button-top {
+            padding: 8px 12px;
+            font-size: 13px;
+        }
+
+        #question-container {
+            font-size: 1em;
+            padding: 10px;
+            margin-bottom: 8px;
+            height: auto;
+            max-height: none;
+        }
+
+        #answers button {
+            font-size: 1.4em;
+            padding: 12px 20px;
+            margin: 8px auto;
+            max-height: 20px;
+        }
+
+        .answers {
+            gap: 5px;
+        }
+
+        #game-header {
+            margin-bottom: 8px;
+        }
+
+        #avatar-zone {
+            margin-bottom: 10px;
+        }
+
+        .answers-container {
+            margin-bottom: 6px;
+        }
     }
 
-    .answers-container {
-        margin-bottom: 10px; /* Réduit la marge du bas */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 95% !important; /* Utilise un pourcentage */
-        max-width: none !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+    /* Grands téléphones / Petites tablettes en portrait (601px à 768px) - Ajoute tes styles ici */
+    @media (min-width: 601px) and (max-width: 768px) {
+        /* ... tes styles pour les grands téléphones / petites tablettes ... */
     }
 
-    .answers {
-        gap: 3px; /* Réduit légèrement l'espacement entre les boutons */
-        display: flex;
-        flex-direction: column;
-        align-items: stretch; /* Étire les boutons pour prendre toute la largeur */
+    /* Tablettes en paysage et écrans plus grands (à partir de 769px) */
+    @media (min-width: 769px) {
+        /* ... tes styles pour les tablettes en paysage et écrans plus grands ... */
     }
-
-    .answers #answers button { /* Ajout de .answers devant #answers */
-        font-size: 0.9em;
-        padding-top: 4px;
-        padding-bottom: 4px;
-    }
-
-    
-    #game-header {
-        margin-bottom: 1px; /* Réduit la marge de l'en-tête */
-        padding-left: 5px; /* Réduit le padding left */
-    }
-
-    #avatar-zone {
-        margin-bottom: 10px; /* Réduit la marge du bas */
-        flex-direction: column;
-        align-items: center;
-        padding-left: 5px; /* Réduit le padding left */
-    }
-
-    .jokers-top {
-        flex-direction: row;
-        justify-content: space-around;
-        width: 95%; /* Prend un peu plus de largeur */
-        padding-left: 10px; /* Réduit le padding left */
-        padding-right: 10px; /* Ajoute un padding right */
-    }
-
-    .answers-container {
-        margin-bottom: 12px; /* Réduit la marge du bas */
-    }
-}
-
-
-/* ==========================================================================
-   QUERY FOR MEDIUM PHONES (environ 481px à 768px)
-   ========================================================================== */
-@media (min-width: 481px) and (max-width: 768px) {
-    body {
-        font-size: 18px; /* Augmenter la taille de base de la police */
-        padding-top: 5px; /* Ajuster le padding top */
-    }
-
-
-    #game {
-        padding-top: 5px; /* Ajuster le padding top */
-        padding-bottom: 5px;
-    }
-
-    #avatar-zone .avatar-container img {
-        max-height: 180px; /* Agrandir l'avatar */
-    }
-
-    .joker-button {
-        padding: 8px; /* Ajuster le padding des jokers */
-        font-size: 13px; /* Agrandir la police des jokers */
-    }
-
-    .joker-button img {
-        max-width: 60px; /* Ajuster la taille des icônes des jokers */
-    }
-
-    .quit-button-top {
-        padding: 8px 12px; /* Ajuster le padding du bouton quitter */
-        font-size: 13px; /* Agrandir la police du bouton quitter */
-    }
-
-    #question-container {
-        font-size: 1em; /* Réduire la taille de la police */
-        padding: 10px; /* Réduire le padding */
-        margin-bottom: 8px; /* Ajuster la marge du bas */
-        height: auto; /* Rendre la hauteur automatique pour s'adapter au contenu */
-        max-height: none; /* Supprimer la hauteur maximale */
-    }
-
-
-    #answers button {
-        font-size: 1.4em; /* Agrandir la police des réponses */
-        padding: 12px 20px; /* Ajuster le padding des boutons de réponse */
-        margin: 8px auto; /* Ajuster la marge des boutons de réponse */
-        max-height: 20px;
-    }
-
-    .answers {
-        gap: 5px; /* Ajuster l'espacement entre les réponses */
-    }
-
-    #game-header {
-        margin-bottom: 8px; /* Ajuster la marge de l'en-tête */
-    }
-
-    #avatar-zone {
-        margin-bottom: 10px; /* Ajuster la marge de la zone avatar */
-    }
-
-    .answers-container {
-        margin-bottom: 10px; /* Ajuster la marge du conteneur des réponses */
-    }
-}
-
-
-
-/* iPHONE 16 - Ajuster la largeur des conteneurs (ton code existant) */
-@media (min-width: 391px) and (max-width: 414px) {
-    #game {
-        padding-top: 2px;
-        padding-bottom: 5px; /* Réduit le padding bottom */
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    #game-header {
-        margin-bottom: 6px;
-    }
-
-    .palier-container {
-        margin-bottom: 6px;
-    }
-
-    h2 {
-        font-size: 1.2em;
-        margin-bottom: 0;
-    }
-
-    #question-info {
-        font-size: 1.1em;
-        margin-bottom: 3px;
-    }
-
-    #avatar-zone {
-        margin-bottom: 8px;
-    }
-
-    .avatar-container img {
-        max-height: 180px !important;
-    }
-
-    #question-background-container {
-        padding: 0;
-        width: 450px;
-        margin-bottom: 16px;
-    }
-
-    .jokers-top {
-        justify-content: space-around;
-        padding-bottom: 5px;
-        max-height: 50px;
-    }
-
-    .joker-button {
-        font-size: 13px;
-        padding: 7px;
-        margin-bottom: -7px;
-    }
-
-    .joker-button img {
-        max-width: 90px;
-    }
-
-    .quit-button-top {
-        background-color: #dc3545; /* Couleur rouge */
-        color: white;
-        padding: 8px 12px;
-        font-size: 14px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        z-index: 30; /* S'assurer qu'il est au-dessus des autres éléments */
-        /* Positionnement en haut à gauche */
-        position: absolute;
-        top: -100px;
-        left: 40px;
-    }
-
-    #question-container {
-        margin-bottom: 20px;
-        font-size: 1.45em;
-        padding: 20px;
-        width: 90vw; /* Augmenter la largeur */
-        margin-bottom: 6px;
-    }
-
-    /*#answers button {
-        font-size: 1.2em;
-        padding: 15px;
-        margin: 5px auto;
-        width: 95%; /* Augmenter la largeur
-    } */
-
-    .answers {
-        gap: 4px;
-    }
-
-    #quit-button {
-        font-size: 14px;
-        padding: 6px 10px;
-    }
-}
