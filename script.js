@@ -491,9 +491,10 @@ function endGame(victory) {
 }
 
 function getSecuredAmount() {
-    if (currentPalier === 2) return 5000;
-    if (currentPalier === 3) return 25000;
-    return 0;
+    if (currentQuestionIndex >= 14) return 1000000; // Palier 3 (victoire)
+    if (currentQuestionIndex >= 9) return 48000;  // Palier 2 (10ème question réussie)
+    if (currentQuestionIndex >= 4) return 5000;   // Palier 1 (5ème question réussie)
+    return 0; // Avant le premier palier
 }
 
 function quitGame() {
