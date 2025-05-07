@@ -210,7 +210,7 @@ function showPalierPage() {
             palierPage.removeEventListener('click', startGameOnInteraction);
             palierPage.removeEventListener('touchstart', startGameOnInteraction);
         }
-    }, 3000);
+    }, 7000);
 }
 
 function startGame() {
