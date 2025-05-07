@@ -830,7 +830,7 @@ h1 {
             margin-bottom: 10px;
             text-align: center;
             box-sizing: border-box;
-            height: 120px;
+            height: 100px;
         }
 
         .answers-container {
@@ -855,8 +855,8 @@ h1 {
             font-size: 1.1em !important; /* Augmente légèrement la taille de la police si nécessaire */
             padding-top: 10px !important; /* Augmente le padding en haut */
             padding-bottom: 10px !important; /* Augmente le padding en bas */
-            margin-top: 6px !important; /* Ajoute de la marge au-dessus de chaque bouton */
-            margin-bottom: 6px !important; /* Ajoute de la marge en dessous de chaque bouton */
+            margin-top: 4px !important; /* Ajoute de la marge au-dessus de chaque bouton */
+            margin-bottom: 4px !important; /* Ajoute de la marge en dessous de chaque bouton */
             line-height: 1.5 !important;
         }
 
