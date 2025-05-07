@@ -130,14 +130,7 @@ h1 {
     background-position: center; /* Centrer l'image */
     }
 
-    #skip-instruction {
-        color: rgba(255, 255, 255, 0.7); /* Couleur gris clair */
-        font-size: 0.9em;
-        margin-top: 30px; /* Ajoute une marge en haut pour l'espacer du bord supérieur */
-        margin-bottom: 10px; /* Ajoute un peu d'espace sous le texte */
-        cursor: pointer; /* Indique que c'est cliquable */
-    }
-
+      
     #palier-page h2 {
         font-size: 2.2em;
         margin-bottom: 10px;
@@ -157,6 +150,15 @@ h1 {
         background-color: rgba(0, 0, 50, 0.3); /* Bleu foncé transparent */
     }
 
+    #skip-instruction {
+        color: rgba(255, 255, 255, 0.7); /* Couleur gris clair */
+        font-size: 0.9em;
+        margin-top: 30px; /* Ajoute une marge en haut pour l'espacer du bord supérieur */
+        margin-bottom: 10px; /* Ajoute un peu d'espace sous le texte */
+        cursor: pointer; /* Indique que c'est cliquable */
+    }
+
+    
     .palier-row {
         display: flex;
         justify-content: space-between; /* Espacer le numéro et le montant */
