@@ -133,7 +133,6 @@ h1 {
       
     #palier-page h2 {
         font-size: 2.2em;
-        margin-bottom: 10px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         margin-top: 70px; /* Ajoute une marge en haut du titre pour l'espacer du bord */
         margin-bottom: 50px; /* Ajoute une marge en bas du titre pour l'espacer du tableau */
@@ -821,10 +820,22 @@ h1 {
             left: 45px;
         }
 
+        #skip-instructions {
+            margin-bottom: 15px;
+        }
+
         #palier-page {
             max-width: 100%;
+            margin-bottom: 10px;
             
         }
+
+        #palier-page h2 {
+            margin-bottom: 18px;
+        }
+
+
+
 
         #palier-page th, #palier-page td {
             padding-top: 5px !important; /* Réduit le padding vertical */
