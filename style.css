@@ -845,7 +845,7 @@ h1 {
         }
 
         .answers {
-            gap: 3px !important;
+            gap: 2px !important;
             display: flex;
             flex-direction: column;
             align-items: center;
