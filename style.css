@@ -114,7 +114,7 @@ h1 {
     /* Styles de base de la page, comme précédemment */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     height: 100vh;
@@ -130,12 +130,20 @@ h1 {
     background-position: center; /* Centrer l'image */
     }
 
+    #skip-instruction {
+        color: rgba(255, 255, 255, 0.7); /* Couleur gris clair */
+        font-size: 0.9em;
+        margin-top: 30px; /* Ajoute une marge en haut pour l'espacer du bord supérieur */
+        margin-bottom: 10px; /* Ajoute un peu d'espace sous le texte */
+        cursor: pointer; /* Indique que c'est cliquable */
+    }
+
     #palier-page h2 {
         font-size: 2.2em;
         margin-bottom: 10px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        margin-top: 0; /* Ajoute une marge en haut du titre pour l'espacer du bord */
-        margin-bottom: 20px; /* Ajoute une marge en bas du titre pour l'espacer du tableau */
+        margin-top: 70px; /* Ajoute une marge en haut du titre pour l'espacer du bord */
+        margin-bottom: 50px; /* Ajoute une marge en bas du titre pour l'espacer du tableau */
     }
 
     #palier-list {
