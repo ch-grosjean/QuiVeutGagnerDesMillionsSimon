@@ -402,7 +402,6 @@ h1 {
     #answers button {
         background-color: #270580; /* Bleu de fond */
         border: 2px solid #FFEB3B; /* Bordure jaune */
-        padding: 15px;
         font-size: 18px;
         cursor: pointer;
         margin-top: 5px;
@@ -932,7 +931,6 @@ h1 {
         font-size: 0.9em;
         padding-top: 4px;
         padding-bottom: 4px;
-        line-height: 1.2 !important;
     }
 
     
