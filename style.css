@@ -929,9 +929,10 @@ h1 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 1em; /* Réduit légèrement la taille de la police des boutons */
-        padding-top: 6px;
-        padding-bottom: 6px;
+        font-size: 0.9em; /* Réduit légèrement la taille de la police des boutons */
+        padding-top: 4px;
+        padding-bottom: 4px;
+        line-height: 1.2;
 
     }
 
@@ -1007,6 +1008,7 @@ h1 {
         font-size: 1.4em; /* Agrandir la police des réponses */
         padding: 12px 20px; /* Ajuster le padding des boutons de réponse */
         margin: 8px auto; /* Ajuster la marge des boutons de réponse */
+        max-height: 20px;
     }
 
     .answers {
