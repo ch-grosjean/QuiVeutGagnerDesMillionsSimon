@@ -134,12 +134,12 @@ h1 {
     #palier-page h2 {
         font-size: 2.2em;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        margin-top: 70px; /* Ajoute une marge en haut du titre pour l'espacer du bord */
-        margin-bottom: 50px; /* Ajoute une marge en bas du titre pour l'espacer du tableau */
+        margin-top: 20px; /* Ajoute une marge en haut du titre pour l'espacer du bord */
+        margin-bottom: 20px; /* Ajoute une marge en bas du titre pour l'espacer du tableau */
     }
 
     #palier-list {
-        width: 90%; /* Ajuster la largeur de la liste */
+        width: 80%; /* Ajuster la largeur de la liste */
         max-width: 500px; /* Limiter la largeur maximale sur les grands écrans */
         margin-bottom: 30px;
         border: 2px solid #ffc107; /* Bordure pour la liste */
@@ -258,9 +258,12 @@ h1 {
     #game-header {
         width: 95%;
         max-width: 600px;
+        align-items: center;
         text-align: center;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
+        margin-left: 10px;
     }
+
     .palier-container {
         margin-bottom: 3px;
         padding: 5px;
@@ -272,6 +275,7 @@ h1 {
         margin-bottom: 3px;
         color: white;
     }
+
     #question-info {
         font-size: 14px;
         color: white;
@@ -761,105 +765,46 @@ h1 {
             box-sizing: border-box;
             width: 100vw !important;
             overflow-x: hidden !important;
-            min-height: 80dvh;
-            overflow-y: hidden;
+            min-height: 100vh; /* Utilise 100vh pour que le body prenne toute la hauteur de l'écran */
+            overflow-y: auto; /* Permet le défilement vertical si le contenu dépasse */
         }
-
-        h1#title {
-            font-size: 30px;
-            margin-bottom: 2px;
-            color: white;
-        }
-
-        h2#subtitle {
-            font-size: 20px;
-        }
-
+    
         #game {
             padding-top: 10px;
             padding-bottom: 20px;
             box-sizing: border-box;
             justify-content: flex-start;
             width: 100% !important;
-            overflow-y: hidden;
+            overflow-y: auto; /* Permet le défilement vertical si le contenu dépasse */
         }
 
-        #content-container {
-            padding-left: 0 !important;
-            padding-right: 0 !important;
+        
+        .content-container {
+            padding: 0;
         }
-
-        #avatar-zone .avatar-container img {
-            max-height: 160px;
-        }
-
-        .avatar-container img {
-            padding: 15px;
-        }
-
-        .joker-button {
-            padding: 4px;
-            font-size: 10px;
-        }
-
-        .joker-button img {
-            max-width: 70px;
-        }
-
-        .quit-button-top {
-            background-color: #dc3545;
-            color: white;
-            padding: 6px 10px;
-            font-size: 12px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            z-index: 30;
-            position: absolute;
-            top: -100px;
-            left: 45px;
-        }
-
-        #skip-instructions {
-            margin-bottom: 15px;
-        }
-
-        #palier-page {
-            max-width: 100%;
-            margin-bottom: 10px;
-            
-        }
-
-        #palier-page h2 {
-            margin-bottom: 18px;
-        }
-
-
-
-
-        #palier-page th, #palier-page td {
-            padding-top: 5px !important; /* Réduit le padding vertical */
-            padding-bottom: 5px !important; /* Réduit le padding vertical */
-        }
-
+    
         #question-background-container {
-            width: 420px;
+            width: 100%; /* Rendre le conteneur de fond responsive */
             margin-left: 0 !important;
             margin-right: 0 !important;
+            padding-left: 10px; /* Ajoute un peu de marge intérieure à gauche */
+            padding-right: 10px; /* Ajoute un peu de marge intérieure à droite */
+            box-sizing: border-box; /* Inclut le padding dans la largeur */
         }
-
+    
         #question-container {
-            width: 340px;
+            width: 85%; /* Rendre le conteneur de question responsive */
             margin-left: auto;
             margin-right: auto;
-            font-size: 1.2em;
+            font-size: 1.3em;
             padding: 17px;
             margin-bottom: 10px;
             text-align: center;
             box-sizing: border-box;
-            height: 100px;
+            min-height: 80px;
+            max-height: 110px;
         }
-
+    
         .answers-container {
             margin-bottom: 10px;
             display: flex;
@@ -869,47 +814,29 @@ h1 {
             max-width: none !important;
             margin-left: auto !important;
             margin-right: auto !important;
+            box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
         }
-
+    
         .answers {
             gap: 2px !important;
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%; /* Les boutons prennent toute la largeur du conteneur answers-container */
+            box-sizing: border-box;
         }
-
+    
         #answers button {
-            font-size: 1.1em !important; /* Augmente légèrement la taille de la police si nécessaire */
-            padding-top: 10px !important; /* Augmente le padding en haut */
-            padding-bottom: 10px !important; /* Augmente le padding en bas */
-            margin-top: 4px !important; /* Ajoute de la marge au-dessus de chaque bouton */
-            margin-bottom: 4px !important; /* Ajoute de la marge en dessous de chaque bouton */
+            font-size: 1.1em !important;
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
+            margin-top: 4px !important;
+            margin-bottom: 4px !important;
             line-height: 1.5 !important;
+            width: 100%; /* Les boutons prennent toute la largeur du conteneur answers */
+            box-sizing: border-box;
         }
 
-        #game-header {
-            margin-bottom: 1px;
-            padding-left: 5px;
-        }
-
-        #avatar-zone {
-            margin-bottom: 10px;
-            flex-direction: column;
-            align-items: center;
-            padding-left: 5px;
-        }
-
-        .jokers-top {
-            flex-direction: row;
-            justify-content: space-around;
-            width: 95%;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        .answers-container {
-            margin-bottom: 6px;
-        }
     }
 
     /* Moyens téléphones (481px à 600px) */
