@@ -134,7 +134,7 @@ h1 {
     #palier-page h2 {
         font-size: 2.2em;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        margin-top: 20px; /* Ajoute une marge en haut du titre pour l'espacer du bord */
+        margin-top: 10px; /* Ajoute une marge en haut du titre pour l'espacer du bord */
         margin-bottom: 20px; /* Ajoute une marge en bas du titre pour l'espacer du tableau */
     }
 
@@ -153,7 +153,7 @@ h1 {
         color: rgba(255, 255, 255, 0.7); /* Couleur gris clair */
         font-size: 0.9em;
         margin-top: 30px; /* Ajoute une marge en haut pour l'espacer du bord supérieur */
-        margin-bottom: 10px; /* Ajoute un peu d'espace sous le texte */
+        margin-bottom: 5px; /* Ajoute un peu d'espace sous le texte */
         cursor: pointer; /* Indique que c'est cliquable */
     }
 
@@ -770,8 +770,8 @@ h1 {
         }
     
         #game {
-            padding-top: 10px;
-            padding-bottom: 20px;
+            padding-top: 3px;
+            padding-bottom: 10px;
             box-sizing: border-box;
             justify-content: flex-start;
             width: 100% !important;
@@ -790,6 +790,10 @@ h1 {
             padding-left: 10px; /* Ajoute un peu de marge intérieure à gauche */
             padding-right: 10px; /* Ajoute un peu de marge intérieure à droite */
             box-sizing: border-box; /* Inclut le padding dans la largeur */
+        }
+
+        #avatar-zone .avatar-container img {
+            max-height: 130px;
         }
     
         #question-container {
